@@ -1,0 +1,16 @@
+# dependencias
+node_modules/
+
+# builds
+frontend/dist/
+dist/
+
+# estado persistido em runtime (imports de PDF, periodo, fatias, meta global)
+backend/data/
+
+# ambiente / logs / OS
+.env
+.env.*
+*.log
+npm-debug.log*
+.DS_Store

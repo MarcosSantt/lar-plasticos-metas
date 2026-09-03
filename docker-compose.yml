@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    container_name: lar-metas-backend
+    environment:
+      - PORT=3001
+      - DATA_DIR=/app/data
+    volumes:
+      - ./backend/data:/app/data
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: lar-metas-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    restart: unless-stopped
